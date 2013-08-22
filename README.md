@@ -20,6 +20,12 @@ git clone https://github.com/bepcyc/eclipse_installer
 RUN
 ===
 
+Chmod if you need it:
+
+```bash
+chmod +x eclipse_installer.sh
+```
+
 Put downloaded .tar.gz file into the same directory as script.
 Run the script:
 

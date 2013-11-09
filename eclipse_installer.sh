@@ -67,13 +67,19 @@ export ECLIPSE_HOME="/opt/eclipse"
 \$ECLIPSE_HOME/eclipse \$*
 EOF
 check_error
+
+
+#workaround for a bug with menu in Unity in Ubuntu 13.10
+IS_UBUNTU_1310=$(lsb_release -r 2>>/dev/null | grep 13\\.10)
+[ -n "${IS_UBUNTU_1310}" ] && UBUNTU_MENU_WORKAROUND="env UBUNTU_MENU_PROXY=0 "
+
 log "Creating .desktop file"
 sudo tee /usr/share/applications/eclipse.desktop > /dev/null << EOF
 [Desktop Entry]
 Encoding=UTF-8
 Name=Eclipse
 Comment=Eclipse IDE
-Exec=eclipse
+Exec=${UBUNTU_MENU_WORKAROUND}eclipse
 Icon=/opt/eclipse/icon.xpm
 Terminal=false
 Type=Application

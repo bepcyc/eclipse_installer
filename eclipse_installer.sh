@@ -7,19 +7,19 @@ then
 fi
 
 #output only in verbose mode
-function log() {
+log() {
 	if [ -n "$VERBOSE" ]
 	then 
 		echo "$@"
 	fi
 }
 
-function log_error() {
+log_error() {
 	echo "$@" 1>&2
 }
 
 #check errors and exit if found
-function check_error() {
+check_error() {
 	if [ $? -ne 0 ]
 	then
 		ERROR=$?

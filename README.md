@@ -1,3 +1,14 @@
+READ THIS FIRST
+===============
+
+Things have changed since this script was written. There is now a better way to install latest version of Eclipse IDE in Ubuntu, called `umake` [ubuntu-make](https://github.com/ubuntu/ubuntu-make).
+In short, you only need one command to install (and also remove) Eclipse now:
+
+```bash
+umake ide eclipse
+```
+You still can use this project for other distributions of Linux and non-standard situations.
+
 Eclipse Installer
 =================
 
